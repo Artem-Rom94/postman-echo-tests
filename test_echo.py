@@ -7,7 +7,7 @@ def test_1_get_with_params():
     params = {"city": "Moscow", "page": "1"}
     response = requests.get(f"{BASE_URL}/get", params=params)
     assert response.status_code == 200
-    assert response.json()["args"] == params
+    assert response.json()["args"] == {"wrong": "data"}
 
 def test_2_post_with_json():
     payload = {"product": "Laptop", "price": 1500}
